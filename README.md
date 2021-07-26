@@ -1,5 +1,5 @@
-# Notification-CSP
-## Notification for commercial sales platform
+# Store-CSP
+## Store for commercial sales platform
 
-Application will manage Notification CSP modules
+Application will manage Store CSP modules
 
