@@ -1,0 +1,46 @@
+{
+  "name": "pis",
+  "version": "1.0.0",
+  "description": "back-end Project for ( Product Identification System ) with type script , Micro-services architecture",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "tsc && node dist/app.js",
+    "prod": "mkdir -p tmp && tsc && cp -r assets/ tmp/assets && cp  .env tmp/.env && cp package.json tmp/package.json && cp -r dist/ tmp/dist && cd tmp && zip -r -X app.zip ./ && scp app.zip root@198.251.72.19:/home/inbuco/upm && cd .. && npm run setup && rm -r tmp",
+    "setup": "ssh root@198.251.72.19 'unzip -o /home/inbuco/upm/app.zip -d /home/inbuco/upm && cd /home/inbuco/upm/dist/ && npm i  && pm2 stop app.js && pm2 start app.js && rm -r /home/inbuco/upm/app.zip'",
+    "runtime": "cross-env NODE_ENV=runtime nodemon src/app.ts",
+    "dev": "cross-env NODE_ENV=dev nodemon src/app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "INBUCO",
+  "license": "ISC",
+  "keywords": [
+    "INBUCO",
+    "Product Identification System",
+    "upm"
+  ],
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.10",
+    "@types/express": "^4.16.1",
+    "@types/lodash": "^4.14.171",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
+    "tslint": "^5.12.1",
+    "typescript": "^3.9.9"
+  },
+  "dependencies": {
+    "@types/http-status": "^1.1.2",
+    "@types/mongoose": "^5.11.97",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^9.0.2",
+    "express": "^4.16.4",
+    "http-status": "^1.5.0",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.12.9",
+    "mongoose-delete": "^0.5.3",
+    "mongoose-timestamp": "^0.6.0",
+    "path": "^0.12.7",
+    "pm2": "^4.5.6"
+  }
+}
