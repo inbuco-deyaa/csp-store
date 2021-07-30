@@ -42,5 +42,13 @@
     "mongoose-timestamp": "^0.6.0",
     "path": "^0.12.7",
     "pm2": "^4.5.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/slemansafiah43/stores.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/slemansafiah43/stores/issues"
+  },
+  "homepage": "https://gitlab.com/slemansafiah43/stores#README"
 }
